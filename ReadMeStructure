@@ -1,0 +1,39 @@
+Routes.js
+
+	ProductFullPage.js
+
+	OrderFullPage.js
+
+	ProductsListPage.js
+
+		NavBar.js
+
+		LeftSideBarList.js
+
+			LeftSideBarItem.js
+
+		Filter_Search_SortingBar.js
+
+			Filter.js
+
+			Sorting.Js
+
+			Search.js
+
+		FiltersRow.js
+
+			FilterItem.js
+
+		List.js
+
+			*A LOT OF ITEMS
+
+		SideCart.js
+
+			*A LOT OF ITEMS
+
+
+
+	OrdersListPage.js
+
+	chartCheckOut.js

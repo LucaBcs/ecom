@@ -1,0 +1,105 @@
+cd CONTAINING_FOLDER
+
+meteor create APP_NAME
+
+cd APP_NAME
+
+
+meteor npm install react react-dom  react-router  react-router-dom --save
+
+meteor npm install magic-string --save
+
+meteor add jeffm:local-persist
+
+
+***********************************
+*** CHECK package.json
+***********************************
+
+
+  },
+  "dependencies": {
+    "magic-string": "^0.22.4",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2"
+  }
+}
+
+
+
+***********************************
+*** SETUP GIT
+***********************************
+
+
+
+
+
+***********************************
+*** SETUP main.html
+***********************************
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="root">
+</div>
+
+</body>
+
+
+***********************************
+*** CLIENT main.js
+***********************************
+
+import { Meteor } from "meteor/meteor"
+
+import React from "react"
+
+import { render } from "react-dom"
+
+import {Routes} from "./imports/Routes.js"
+
+
+Meteor.startup(() => {
+  render(Routes(), document.getElementById("root"))
+})
+
+
+
+***********************************
+*** SET ./imports/Routes.js
+***********************************
+
+import React from "react"
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Xxx from "./Xxx.js"
+
+export const Routes = ()=>(
+  <Router>
+      <div>
+        <Route exact path="/" component={Xxx} />
+
+      </div>
+  </Router>
+)
+
+
+
+
+
+
+***********************************
+*** SERVER main.js
+***********************************
+
+è da settare chiedere ad antonello. 
