@@ -9,6 +9,8 @@ meteor npm install react react-dom  react-router  react-router-dom --save
 
 meteor npm install magic-string --save
 
+meteor npm install --save bcrypt
+
 meteor add jeffm:local-persist
 
 
@@ -33,7 +35,29 @@ meteor add jeffm:local-persist
 *** SETUP GIT
 ***********************************
 
+git init
+git remote add origin "https://github.com/LucaBcs/ecom"
+git add .
+git commit -m 'FIRST COMMIT'
+git push -u origin master
 
+git log --all --decorate --oneline --graph
+
+
+** PER AGGIORNARE **
+
+git add .
+git commit -m 'FIRST COMMIT'
+git push
+
+
+** BACK TO LAST WORKING VERSION **
+
+DELETE PROJECT FOLDER
+
+cd "PARENT PROJECT FOLDER"
+
+git clone "https://github.com/LucaBcs/ecom"
 
 
 
@@ -62,16 +86,20 @@ meteor add jeffm:local-persist
 ***********************************
 
 import { Meteor } from "meteor/meteor"
-
 import React from "react"
-
 import { render } from "react-dom"
+import { BrowserRouter } from "react-router-dom"
 
-import {Routes} from "./imports/Routes.js"
+import Routes from "../imports/Routes.js"
 
 
 Meteor.startup(() => {
-  render(Routes(), document.getElementById("root"))
+
+  render (
+    <BrowserRouter>
+      <Routes/>
+    </BrowserRouter>, 
+    document.getElementById("root"))
 })
 
 
@@ -80,22 +108,41 @@ Meteor.startup(() => {
 *** SET ./imports/Routes.js
 ***********************************
 
+
 import React from "react"
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Xxx from "./Xxx.js"
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
-export const Routes = ()=>(
-  <Router>
-      <div>
-        <Route exact path="/" component={Xxx} />
-
-      </div>
-  </Router>
-)
+import ChartCheckOut from "./ChartCheckOut.js"
+import OrderFullPage from "./OrderFullPage.js"
+import OrdersListPage from "./OrdersListPage.js"
+import ProductFullPage from "./ProductFullPage.js"
+import ProductsListPage from "./ProductsListPage.js"
 
 
+export default class Routes extends React.Component{
+
+  render(){
+
+    return(
 
 
+        <Router>
+          <div>
+          <Route exact path="/" component={ProductsListPage} />
+              <Route exact path="/chechout" component={ChartCheckOut} />
+          <Route exact path="/order" component={OrderFullPage} />
+          <Route exact path="/orderlist" component={OrdersListPage} />
+          <Route exact path="/product" component={ProductFullPage} />
+        </div>
+        </Router>
+    )
+  }
+}
+
+
+*** IN EVERY COMPONENT YOU CALL THE LINK FROM ***
+
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
 
 ***********************************
@@ -103,3 +150,24 @@ export const Routes = ()=>(
 ***********************************
 
 è da settare chiedere ad antonello. 
+
+
+***********************************
+*** TAG STRUCTURE
+***********************************
+
+
+tags: [ {value: "asti", detail: "place"},
+    {value: "eating", detail: "category"},
+    {value: "cooking", detail: "category"},
+    {value: "rice", detail: "product"},
+    {value: "maincourse", detail: "category"},
+    {value: "fit", detail: "hashtag"},
+    {value: "fitness", detail: "hashtag"},
+  ]
+
+  ["place:asti", "category:eating", "category:cooking", "product:rice", "category:maincourse", "#fit", "#fitness", "valleverde", "valledegliorti"]
+
+ "place:asti category:eating category:cooking product:rice category:maincourse #fit #fitness valleverde valledegliorti"
+
+  "place:asti category:eating,cooking,maincourse product:rice #fit #fitness valleverde valledegliorti"

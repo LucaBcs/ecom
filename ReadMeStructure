@@ -14,11 +14,23 @@ Routes.js
 
 		Filter_Search_SortingBar.js
 
-			Filter.js
+			FilterField.js
 
-			Sorting.Js
+				FilterList.Js
 
-			Search.js
+					FiterItem.js
+
+			SortField.Js
+
+				FilterList.Js
+
+					FilterItem.js
+
+			SearchField.js
+
+				SearchList.js
+
+					SearchItem.js
 
 		FiltersRow.js
 
@@ -37,3 +49,8 @@ Routes.js
 	OrdersListPage.js
 
 	chartCheckOut.js
+
+
+
+
+	

@@ -1,13 +1,16 @@
 import { Meteor } from "meteor/meteor"
-//import Meteor library
 import React from "react"
-//import React library
 import { render } from "react-dom"
-//import the render function from react-dom
-import {Routes} from "./imports/Routes.js"
+import { BrowserRouter } from "react-router-dom"
 
-//import the React component App (be sure you create first)
+import Routes from "../imports/Routes.js"
+
 
 Meteor.startup(() => {
-  render(Routes(), document.getElementById("root"))
+
+  render (
+  	<BrowserRouter>
+  		<Routes/>
+  	</BrowserRouter>, 
+  	document.getElementById("root"))
 })
