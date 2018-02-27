@@ -15,8 +15,9 @@ import ProfilePicture from "../_SimpleParts/ProfilePicture.js"
 
 export default class ListItem extends React.Component{
 
-	render(){ 
-		
+	render(){  
+
+		var predefined = this.props.predefined
 		var products = this.props.products
 
 		return(
@@ -24,16 +25,18 @@ export default class ListItem extends React.Component{
 			products.map((item,index) =>{
 
 				return(
-
+				
 				<div key={index} className="listItem-container">
 
 					<div className="item-left-block">
 						<FavouritesButton_ItemId
-							itemId={item.itemId}
+							product={item}
+							predefined={predefined}
 						/> 
 
 						<ProfilePicture
-							profilePicture={item.profilePicture}
+							product={item}
+							predefined={predefined}
 						/>
 
 						<CartButton
@@ -43,31 +46,34 @@ export default class ListItem extends React.Component{
 					</div>
 					<div>
 						<Name_Manufacturer_Price
-							name={item.productName}
-							manufacturer={item.manufacturer}
-							price={item.productPriceQuantity}
+							product={item}
+							predefined={predefined}
 						/>
 
 						<UnitaryPrice
-							unitaryPrice={item.productPriceQuantity}
+							product={item}
+							predefined={predefined}
 						/>
 						<Quantity
-							quantity={item.productPriceQuantity}
+							product={item}
+							predefined={predefined}
 						/>
 
 						<ExpectedCostsPickUp_Delivery
-							pickUp={item.expectedPickUpCosts}
-							delivery={item.expectedDeliveryCosts}
+							product={item}
+							predefined={predefined}
 						/>
 						<Seller
-							seller={item.seller}
+							product={item}
+							predefined={predefined}
 						/>
 						<Tags
-							tags={item.tags}
+							product={item}
+							predefined={predefined}
 						/>
 						<Availability_DeliveryTiming
-							availability={item.itemsAvailable}
-							deliveryTiming={item.deliveryTiming}					
+							product={item}
+							predefined={predefined}					
 						/>
 					</div>
 
@@ -84,6 +90,7 @@ export default class ListItem extends React.Component{
 					<div className="spacing50rem"> </div>
 
 				</div>
+				
 
 				)})
 			)

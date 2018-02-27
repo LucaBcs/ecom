@@ -3,43 +3,44 @@ import React from "react"
 export default class UnitaryPrice extends React.Component{
 
 	render(){
-		
-		var currency = this.props.unitaryPrice.currency
-		var unitaryPriceUoM = this.props.unitaryPrice.unitaryPriceUnitOfMeasure
 
-		var nrOfPieces = this.props.unitaryPrice.nrOfPieces
-		var quantityPerPiece = this.props.unitaryPrice.quantityPerPiece
-		var basePrice = this.props.unitaryPrice.priceNoVAT
+		{/* IMPORT PROPS */}
 
-		var unitaryPriceNoVAT = Number(basePrice/quantityPerPiece*nrOfPieces*1000)
+		var currency = this.props.product.price.currency.symbol
+		var unitaryPriceUoM = this.props.product.uom.unitaryPrice.unit
 
-		var priceNoVAT = Number(unitaryPriceNoVAT)
-		var VAT = Number(this.props.unitaryPrice.productVAT)
-		var priceVAT = Number(priceNoVAT*VAT/100)
+		var pieces = this.props.product.quantity.pieces
+		var quantityPerPiece = this.props.product.quantity.quantityPerPiece
 
-		var priceNoVATplusVATnum = priceNoVAT+priceVAT
+		var priceNoVAT = Number(this.props.product.price.priceNoVAT)
+		var productVAT = Number(this.props.product.price.productVAT) 
 
-		var priceNoVATplusVATdisplay = Number(priceNoVATplusVATnum).toFixed(2).split(".")
-		var priceNoVATdisplay = Number(priceNoVAT).toFixed(2).split(".").join(",")
-		
-		var priceString = <div className="two-line-text-right"> 
-							  <p className="float-right bigPriceDecimals">{currency}/{unitaryPriceUoM}</p> 
-							  <p className="float-right bigPriceDecimals">,{priceNoVATplusVATdisplay[1]}</p>
-						      <p className="float-right bigPrice">{priceNoVATplusVATdisplay[0]}</p> 
-							  <p className="float-right priceNoVAT">{currency}/{unitaryPriceUoM}+VAT &nbsp;</p> 
-							  <p className="float-right priceNoVAT">{priceNoVATdisplay}</p> 
-						  </div>
+		{/* EDITING AND CALCULATIONS */}
+
+		var unitaryPriceNoVAT = Number(priceNoVAT/quantityPerPiece*pieces*1000)
+		var unitaryPriceVAT = Number(unitaryPriceNoVAT*productVAT/1000)
+
+		var unitaryPriceNoVATplusVAT = Number(unitaryPriceNoVAT+unitaryPriceVAT)
+
+		var displayUnitaryPriceNoVATplusVAT = Number(unitaryPriceNoVATplusVAT).toFixed(2).split(".")
+		var displayUnitaryPriceNoVAT = Number(unitaryPriceNoVAT).toFixed(2).split(".").join(",")
 
 		return(
 
 			<div className="standarCenterRow-container">
+
 				<div className="two-line-text-left">UNITARY PRICE</div>
-				{priceString}
+
+				<div className="two-line-text-right"> 
+				  <p className="float-right bigPriceDecimals">{currency}/{unitaryPriceUoM}</p> 
+				  <p className="float-right bigPriceDecimals">,{displayUnitaryPriceNoVATplusVAT[1]}</p>
+			      <p className="float-right bigPrice">{displayUnitaryPriceNoVATplusVAT[0]}</p> 
+				  <p className="float-right priceNoVAT">{currency}/{unitaryPriceUoM}+VAT &nbsp;</p> 
+				  <p className="float-right priceNoVAT">{displayUnitaryPriceNoVAT}</p> 
+			    </div>
+			    
 			</div>
-
-			)
-
+		)
 	}
-
 }
 

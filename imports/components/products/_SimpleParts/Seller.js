@@ -4,26 +4,25 @@ export default class Seller extends React.Component{
 
 	render(){
 
-		var sellerName = <div className="text fsz-14">{this.props.seller.companyName}</div>
-		var sellerAddress = <div className="text fsz-12">{this.props.seller.city},&nbsp;{this.props.seller.country}</div>
+		{/* IMPORT PROPS */}
 
+		var sellerName = this.props.product.seller.entity.name
+		var sellerCountry = this.props.product.seller.entity.country
 
 		return(
 
 			<div className="standarCenterRow-container">
+
 				<div className="two-line-text-left">SELLER</div>
-			<div className="two-line-text-right">
-				<div className="vertical-space"></div>
-				{sellerName}
-				{sellerAddress}
-				<div className="vertical-space"></div>
-			</div>
+
+				<div className="two-line-text-right">
+					<div className="vertical-space"></div>
+					<div className="text fsz-14">{sellerName}</div>
+					<div className="text fsz-12">{sellerCountry}</div>
+					<div className="vertical-space"></div>
+				</div>
 
 			</div>
-
-
-			)
-
+		)
 	}
-
 }

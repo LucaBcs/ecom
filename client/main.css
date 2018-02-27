@@ -251,15 +251,19 @@ p{
 
 .sideCart-container-top{
 	background-color: #D6EAF8;
-}
+	}
+
+.sideCart-container-total{
+	background-color: #ABEBC6;
+	}
 
 .sideCart-container-middle{
-
+	background-color: #F2F3F4;
+	border-right: 1rem solid #BDC3C7;
+	border-left: 1rem solid #BDC3C7;
+	height: 100%;
 }
 
-.sideCart-container-bottom{
-
-}
 
 .sideCart-standard-row-container{
 	box-sizing: border-box;
@@ -272,15 +276,115 @@ p{
 	grid-template-columns: auto 50rem;
 }
 
+.sideCart-total-row-container{
+	box-sizing: border-box;
+	border-bottom: 1rem solid #BDC3C7;
+	border-right: 1rem solid #BDC3C7;
+	border-left: 1rem solid #BDC3C7;
+	height: 50rem;
+	line-height: 50rem;
+	display: grid;
+	grid-template-columns: 50rem auto 50rem;
+}
+
 .sideCart-left-text-container{
 	box-sizing: border-box;
 	display: grid;
 	grid-template-columns: auto auto;
 	border-right: 1rem solid #BDC3C7;
+	padding-left: 10rem;
+	padding-right: 10rem;
 }
 
-.sideCart-edit-container{
+.sideCart-left-text{
+	line-height: 50rem;
+	font-size: 16rem;
+	font-weight: bold;
+	text-align: left;
+}
+
+.sideCart-right-text-double{
+	display: grid;
+	grid-template-rows: 1fr 4fr 4fr 1fr;
+	text-align: right;
+}
+
+.sideCart-right-text{
+	line-height: 50rem;
+	font-size: 16rem;
+	font-weight: bold;
+	text-align: right;
+}
+
+
+
+.singleCartItem-row-container{
+	display: grid;
+	grid-template-columns: 50rem 50rem auto 50rem;
+	height: 50rem;
+	line-height: 50rem;
+	border-bottom: 1rem solid #BDC3C7;
+}
+
+.singleCartItem-icon-container{
+	line-height: 50rem;
+
+}
+
+.singleCartItem-doubleIcon-container{
+	line-height: 25rem;
+	border-right: 1rem solid #BDC3C7;
+	border-left: 1rem solid #BDC3C7;
 	box-sizing: border-box;
+
+}
+
+.singleCartItem-text-container{
+	display: grid;	
+	grid-template-columns: auto auto ;
+	padding:0 10rem;
+}
+
+.singleCart-txt-left{
+	display: grid;
+	grid-template-rows: 1fr 4fr 4fr 1fr;
+}
+
+.singleCart-txt-right{
+	display: grid;
+	grid-template-rows: 1fr 4fr 4fr 1fr;
+	text-align: right;
+	float: right;
+}
+
+.singleCart-txt-right-container{
+	display: grid;
+	grid-template-columns: auto auto;
+}
+
+.sidecart-total{
+	float: right;
+	text-align: right;
+}
+
+.icons15rem{
+	height: 15rem;
+}
+
+.border-top{
+	border-top: 1rem solid #BDC3C7;
+}
+
+.border-left{
+	border-left: 1rem solid #BDC3C7;
+}
+
+.border-bottom{
+	border-bottom: 1rem solid #BDC3C7;
+}
+
+.border-right{
+	border-right: 1rem solid #BDC3C7;
 }
 
 

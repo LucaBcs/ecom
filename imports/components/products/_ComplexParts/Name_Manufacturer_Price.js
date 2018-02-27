@@ -10,29 +10,27 @@ export default class Name_Manufacturer_Price extends React.Component{
 	}
 
 	render(){
-		
-		var productName = this.props.name
-		var manufacturer = this.props.manufacturer.companyName + ", " + this.props.manufacturer.city + " (" + this.props.manufacturer.country + ")"
-		var currency = this.props.price.currency
 
-		var priceNoVAT = Number(this.props.price.priceNoVAT)
-		var VAT = Number(this.props.price.productVAT)
-		var priceVAT = Number(priceNoVAT*VAT/100)
+		{/* IMPORT PROPS */}
 
-		var priceNoVATplusVATnum = priceNoVAT+priceVAT
+		var productName = this.props.product.productName
+		var manufacturerName = this.props.product.manufacturer.entity.name
+		var manufacturerCountry = this.props.product.manufacturer.entity.country
+		var currency = this.props.product.price.currency.symbol
 
-		var priceNoVATplusVATdisplay = Number(priceNoVATplusVATnum).toFixed(2).split(".")
-		var priceNoVATdisplay = Number(priceNoVAT).toFixed(2).split(".").join(",")
+		var priceNoVAT = Number(this.props.product.price.priceNoVAT)
+		var productVAT = Number(this.props.product.price.productVAT)
 
+		{/* EDITING AND CALCULATIONS */}
 
-		
-		var priceString = <div className="two-line-text-right"> 
-							  <p className="float-right bigPriceDecimals">{currency}</p> 
-							  <p className="float-right bigPriceDecimals">,{priceNoVATplusVATdisplay[1]}</p>
-						      <p className="float-right bigPrice">{priceNoVATplusVATdisplay[0]}</p> 
-							  <p className="float-right priceNoVAT">{currency}+VAT &nbsp;</p> 
-							  <p className="float-right priceNoVAT">{priceNoVATdisplay}</p> 
-						  </div>
+		var manufacturer = manufacturerName + ", " + manufacturerCountry
+
+		var priceVAT = Number(priceNoVAT*productVAT/100)
+	
+		var priceNoVATplusVAT = Number(priceNoVAT+priceVAT)
+
+		var displayPriceNoVATplusVAT = Number(priceNoVATplusVAT).toFixed(2).split(".")
+		var displayPriceNoVAT = Number(priceNoVAT).toFixed(2).split(".").join(",")
 
 		return(
 
@@ -44,13 +42,18 @@ export default class Name_Manufacturer_Price extends React.Component{
 					<div className="text fsz-12">{manufacturer}</div>
 					<div className="vertical-space"></div>
 				</div>
-				{priceString}
+
+				<div className="two-line-text-right"> 
+					<p className="float-right bigPriceDecimals">{currency}</p> 
+					<p className="float-right bigPriceDecimals">,{displayPriceNoVATplusVAT[1]}</p>
+			        <p className="float-right bigPrice">{displayPriceNoVATplusVAT[0]}</p> 
+				    <p className="float-right priceNoVAT">{currency}+VAT &nbsp;</p> 
+				    <p className="float-right priceNoVAT">{displayPriceNoVAT}</p> 
+			  	</div>	
+
 			</div>
-
-			)
-
+		)
 	}
-
 }
 
 							
