@@ -1,0 +1,26 @@
+export const calc = (a,b)=>{
+	var obj = {name:"cazz", age:"porco dio"}
+	return obj
+}
+
+export const calc2 = (a,b)=>{
+	var obj = {name:"cazz", age:"porco dio"}
+	return obj
+}
+
+
+
+
+
+ritorni 1 cosa: 1 oggetto, array ecc ma sempre solo 1 cosa
+
+
+import {calc} from "./file.js"
+
+fare file con cose logiche inside. 
+
+opzioni: o le importi dove le usi
+			o le importi nel main e passi tramite props. 
+
+
+var banana = calc()

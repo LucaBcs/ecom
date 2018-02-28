@@ -1,0 +1,66 @@
+tx
+id
+pl
+
+
+PRODUCT NAME
+productName
+Type product name here..
+
+PRICE WITHOUT VAT 
+inputPriceNoVAT
+PRICE WITH VAT
+inputPriceNoVATplusVAT
+inputPriceValue
+Type your product price here...
+
+QUANTITY PER PIECE
+quantityPerPiece
+Type your product quantity per piece here..
+
+MANUFACTURER
+manufacturer
+Type manufacturer company name here..
+
+TAGS
+tags
+Type as many tag you wish separated by a space..
+
+profilePic
+
+coverPic
+
+
+
+location: hardcoded
+------------------------------------------------
+location: {entity: {name: "Current Location SRL", type: "Legal Entity", country:"Italy"}, legalAddress: {number:"34", street:"Via Current Location", city:"City", zip:"23334", country:"Italy"}},
+
+
+currency: hardcoded user select one of two
+------------------------------------------------
+currency: {name:"euro", code:"EUR", symbol:"€"}
+		  {name:"dollar", code:"USD", symbol:"$"}
+
+
+productVAT: hardcoded 22
+------------------------------------------------
+price: {priceNoVAT: "", productVAT: 22, currency: {name:"euro", code:"EUR", symbol:"€"}},
+
+
+quantity and unit of measurement: harcoded except quantityPerPiece
+------------------------------------------------
+quantity: {pieces: 1, quantityPerPiece: ""},
+uom: {quantity: {system: "metric system", unit:"gr"}, unitaryPrice: {system: "metric system", unit:"kg"}},
+
+
+manufacturer: harcoded 2
+------------------------------------------------
+manufacturer: {entity: {name: "Manufacturer 2 SRL", type: "Legal Entity", country:"Italy"}, legalAddress: {number:"1", street:"Via Manu", city:"Bagigi", zip:"23334", country:"Italy"}},
+
+manufacturer: {entity: {name: "Manufacturer 1 SRL", type: "Legal Entity", country:"Italy"}, legalAddress: {number:"2", street:"Manu", city:"Bagigi", zip:"23334", country:"Italy"}},
+
+
+seller: harcoded 2
+------------------------------------------------
+seller: {entity: {name: "Seller SRL", type: "Legal Entity", country:"Italy"}, legalAddress: {number:"34", street:"Arsskksksl", city:"Bagigi salala", zip:"23334", country:"Italy"}},

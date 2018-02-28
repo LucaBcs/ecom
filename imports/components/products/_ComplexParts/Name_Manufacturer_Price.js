@@ -2,13 +2,6 @@ import React from "react"
 
 export default class Name_Manufacturer_Price extends React.Component{
 
-	splitDecimals(){
-
-
-
-
-	}
-
 	render(){
 
 		{/* IMPORT PROPS */}

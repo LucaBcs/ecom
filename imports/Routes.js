@@ -6,6 +6,7 @@ import OrderFullPage from "./OrderFullPage.js"
 import OrdersListPage from "./OrdersListPage.js"
 import ProductFullPage from "./ProductFullPage.js"
 import ProductsListPage from "./ProductsListPage.js"
+import AdminProductsListPage from "./AdminProductsListPage.js"
 
 
 export default class Routes extends React.Component{
@@ -21,6 +22,7 @@ export default class Routes extends React.Component{
 					<Route exact path="/order" component={OrderFullPage} />
 					<Route exact path="/orderlist" component={OrdersListPage} />
 					<Route exact path="/product" component={ProductFullPage} />
+					<Route exact path="/admin/productslist" component={AdminProductsListPage} />
 				</div>
 			  </Router>
 		) 

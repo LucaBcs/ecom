@@ -5,7 +5,6 @@ import { BrowserRouter } from "react-router-dom"
 
 import Routes from "../imports/Routes.js"
 
-
 Meteor.startup(() => {
 
   render (

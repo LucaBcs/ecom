@@ -146,10 +146,82 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
 
 ***********************************
+*** CREATE THE COLLECTIONS
+***********************************
+
+inside folder APP_NAME/imports 
+
+create folder /collections 
+
+create file 
+
+
+Products.js and write: 
+
+  import {Mongo} from 'meteor/mongo'
+
+  export const Products =  new Mongo.Collection("products")
+
+(products is the collection for mongo but if wedo not create Products we cannot call it)
+
+  create as many collections you want
+
+
+***********************************
 *** SERVER main.js
 ***********************************
 
-è da settare chiedere ad antonello. 
+import { Meteor } from "meteor/meteor"
+import { Products  } from "../imports/collections/Products.js"
+
+Meteor.startup(() => {
+
+})
+
+***********************************
+*** REMOVE INSECURE
+***********************************
+
+stop the server
+
+
+cd APP_NAME
+
+meteor remove insecure
+
+
+***********************************
+*** CREATE THE METHODS
+***********************************
+
+inside folder APP_NAME/server create /methods folder and inside 
+
+ProductsMethods.js
+
+  import { Meteor } from "meteor/meteor"
+  import { Products  } from "../../imports/collections/Products.js"
+
+Meteor.methods({
+
+  addProduct:function(productObj){
+
+    Products.insert(...productObj)
+
+  }
+
+  removeProduct
+
+  modifyProduct
+
+})
+
+
+***********************************
+quando la chiami: 
+
+Meteor.call("addProduct", newProduct)
+
+
 
 
 ***********************************

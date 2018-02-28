@@ -188,7 +188,6 @@ p{
 	padding-right:5rem;
 	text-align: left;
 	line-height: 50rem;
-
 }
 
 .float-right{
@@ -316,8 +315,6 @@ p{
 	text-align: right;
 }
 
-
-
 .singleCartItem-row-container{
 	display: grid;
 	grid-template-columns: 50rem 50rem auto 50rem;
@@ -354,17 +351,6 @@ p{
 	display: grid;
 	grid-template-rows: 1fr 4fr 4fr 1fr;
 	text-align: right;
-	float: right;
-}
-
-.singleCart-txt-right-container{
-	display: grid;
-	grid-template-columns: auto auto;
-}
-
-.sidecart-total{
-	float: right;
-	text-align: right;
 }
 
 .icons15rem{
@@ -387,5 +373,130 @@ p{
 	border-right: 1rem solid #BDC3C7;
 }
 
+.icons25rem{
+	font-size: 25rem;
+}
+
+.cont-row-20-30{
+	display: grid;
+	grid-template-rows: 20fr 30fr;
+	height: 50rem;
+	box-sizing: border-box;
+	background-color: white;
+	border-right: 1rem solid #CACFD2;
+	border-bottom: 1rem solid #CACFD2;
+	border-left: 1rem solid #CACFD2;
+}
+
+.row20{
+	font-size: 12rem;
+	font-weight: bold;
+	color: #424949;
+	border: 0;
+	padding-right: 10rem;
+	padding-left: 10rem;
+	box-sizing: border-box;
+	margin: 0;
+	display: grid;
+}
+
+.row30{
+	box-sizing: border-box;
+	font-size: 14rem;
+	margin: 0;
+
+	border:0;
+	padding-right: 10rem;
+	padding-left: 10rem;
+
+	display: grid;
+}
+
+.align-flex-end{
+	align-items: flex-end;
+}
+
+.align-end{
+	align-items: end;
+}
 
 
+.cont-row-create{
+	display: grid;
+	grid-template-columns: auto auto;
+	height: 50rem;
+	box-sizing: border-box;
+	background-color: #85C1E9;
+	border-right: 1rem solid #CACFD2;
+	border-bottom: 1rem solid #CACFD2;
+	border-left: 1rem solid #CACFD2;
+}
+
+.create-new{
+	box-sizing: border-box;
+	height: inherit;
+	display: grid;
+	grid-template-columns: auto ;
+	grid-template-rows: 1fr;
+	align-items: center;
+	justify-content: left;
+	padding-right: 5rem;
+	padding-left: 10rem;
+	font-weight: bold;
+}
+
+.save-cancel-container{
+	box-sizing: border-box;
+	height: inherit;
+	display: grid;
+	grid-template-columns: auto auto ;
+	grid-template-rows: 1fr;
+	align-items: center;
+	justify-content: right;
+	padding-right: 10rem;
+	padding-left: 5rem;
+}
+
+.btn-save{
+	box-sizing: border-box;
+	font-size: 16rem;
+	font-weight: bold;
+	color: white;
+	border: 1px solid #1B4F72;
+	background-color: #2874A6;
+	padding: 8rem;
+	border-radius: 4rem;
+
+
+
+}
+
+.btn-cancel{
+	box-sizing: border-box;
+	padding-right: 10rem;
+	font-weight: bold;
+
+}
+
+button{
+	border: 0;
+	padding: 0;
+	background-color: transparent;
+	outline: none;
+}
+
+input{
+	outline: none;
+
+}
+
+select{
+	outline: none;
+
+}
+
+::placeholder{
+
+color: #A6ACAF;
+
+}

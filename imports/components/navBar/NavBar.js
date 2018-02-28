@@ -16,6 +16,7 @@ export default class NavBar extends React.Component{
 			<Link to="/orderlist"> ORDERLIST </Link>
 			<Link to="/product"> PRODUCT </Link>
 			<Link to="/"> PRODUCTPAGE </Link>
+			<Link to="/admin/productslist"> ADMINPRODUCTLIST </Link>
 
 			</header>
 

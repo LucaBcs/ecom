@@ -1,0 +1,182 @@
+{_id: "AAAAA4",
+available: 3,
+productName: "Maronno7",
+location: {entity: {name: "Location SRL", type: "Legal Entity", country:"Italy"}, legalAddress: {number:"34", street:"Arsskksksl", city:"Bagigi salala", zip:"23334", country:"Italy"}},
+pics: {profile: "https://media.eataly.net/media/catalog/product/cache/7/image/433x/9df78eab33525d08d6e5fb8d27136e95/I/l/Il-Mercante-di-Spezie-Sale-Trapani-Secchiello-1Kg-49048.jpg", cover: ""},
+price: {priceNoVAT: 600, productVAT: 22, currency: {name:"euro", code:"EUR", symbol:"€"}},
+quantity: {pieces: 1, quantityPerPiece: 4.56},
+uom: {quantity: {system: "metric system", unit:"gr"}, unitaryPrice: {system: "metric system", unit:"kg"}},
+manufacturer: {entity: {name: "Manuf SRL", type: "Legal Entity", country:"Italy"}, legalAddress: {number:"34", street:"Arucul", city:"Bagigi", zip:"23334", country:"Italy"}},
+seller: {entity: {name: "Seller SRL", type: "Legal Entity", country:"Italy"}, legalAddress: {number:"34", street:"Arsskksksl", city:"Bagigi salala", zip:"23334", country:"Italy"}},
+tags: "category:eating,maincourse product:rice #fit valleverde"},
+
+
+collection Product
+
+_id: "",
+available: "",
+productName: "",
+pickUpLocations: [{companyId: "company1", addressId: "address2"}],
+pics: {profile: "", cover: ""},
+price: {noVAT: "", VAT: 22, currencyId:"EUR"},
+quantity: {pieces: 1, quantityPerPiece: ""},
+uom: {quantity: {system: "metric system", unit:"gr"}, unitaryPrice: {system: "metric system", unit:"kg"}},
+manufacturerId:"company3",
+sellerId:"company2",
+tags:[],
+
+collection Entities
+
+_id:"",
+type:"",
+name:"",
+nationality:"",
+code:"",
+codeType:"",
+legalAddressId:"",
+addressId:[""],
+branchOf:""
+
+collection Addresses
+
+_id:"",
+entityId:[""]
+type:[""]
+number:"",
+street:"",
+city:"",
+zip:"",
+country:"",
+region:""
+floor:""
+apartment:""
+moreInfo:""
+
+collection Currency
+
+_id:"",
+name:"",
+code:"",
+symbol:"",
+
+
+
+collection Addresses
+********************
+type: ["legalAddress", "delivery", "pickUp"]+
+
+
+branchOf
+********************
+branchOf:{companyId:"", typeOfBranch:""}
+
+
+entity
+********************
+type:["legal", "phisical"]
+codeType: ["VATnumber", "fiscalCode"]
+
+
+
+
+*************************
+***INSERT IN DATABASE ***
+*************************
+
+_id:"company1",
+type:"Legal",
+name:"Pick Up SRL",
+nationality:"Italy",
+code:"01436580098",
+codeType:"VATnumber",
+legalAddressId:"address1",
+addressId:["address2"],
+branchOf:"",
+
+_id:"company2",
+type:"Legal",
+name:"Seller SRL",
+nationality:"Italy",
+code:"01436580098",
+codeType:"VATnumber",
+legalAddressId:"address1",
+addressId:["address3"],
+branchOf:"",
+
+_id:"company3",
+type:"Legal",
+name:"Manufacturer SRL",
+nationality:"Italy",
+code:"01436580098",
+codeType:"VATnumber",
+legalAddressId:"address1",
+addressId:["address4"],
+branchOf:"",
+
+*************************
+
+_id:"address1",
+entityId:["company1"]
+type:["legalAddress"]
+number:"11",
+street:"Via Legal 1",
+city:"Asti One",
+zip:"11100",
+country:"Italy",
+region:"AT"
+floor:""
+apartment:""
+moreInfo:""
+
+_id:"address2",
+entityId:["company1"]
+type:["pickUp"]
+number:"22",
+street:"Via PickUp 2",
+city:"Asti Two",
+zip:"22200",
+country:"Italy",
+region:"AT"
+floor:""
+apartment:""
+moreInfo:""
+
+_id:"address3",
+entityId:["company1"]
+type:["legalAddress"]
+number:"11",
+street:"Via Seller 1",
+city:"Asti One",
+zip:"11100",
+country:"Italy",
+region:"AT"
+floor:""
+apartment:""
+moreInfo:""
+
+_id:"address4",
+entityId:["company1"]
+type:["legalAddress"]
+number:"11",
+street:"Via Manufacturer 1",
+city:"Asti One",
+zip:"11100",
+country:"Italy",
+region:"AT"
+floor:""
+apartment:""
+moreInfo:""
+
+*************************
+
+_id:"EUR",
+name:"euro",
+code:"EUR",
+symbol:"€",
+
+_id:"USD",
+name:"USD Dollar",
+code:"USD",
+symbol:"$",
+
+*************************
