@@ -6,19 +6,19 @@ export default class UnitaryPrice extends React.Component{
 
 		{/* IMPORT PROPS */}
 
-		var currency = this.props.product.price.currency.symbol
-		var unitaryPriceUoM = this.props.product.uom.unitaryPrice.unit
+		var currency = this.props.product.currency
+		var unitaryPriceUoM = this.props.product.unitaryPriceUoM.UoM
 
-		var pieces = this.props.product.quantity.pieces
-		var quantityPerPiece = this.props.product.quantity.quantityPerPiece
+		var pieces = this.props.product.pieces
+		var quantityPerPiece = this.props.product.quantityPerPiece
 
-		var priceNoVAT = Number(this.props.product.price.priceNoVAT)
-		var productVAT = Number(this.props.product.price.productVAT) 
+		var priceNoVAT = Number(this.props.product.priceNoVAT)
+		var VAT = Number(this.props.product.VAT) 
 
 		{/* EDITING AND CALCULATIONS */}
 
 		var unitaryPriceNoVAT = Number(priceNoVAT/quantityPerPiece*pieces*1000)
-		var unitaryPriceVAT = Number(unitaryPriceNoVAT*productVAT/1000)
+		var unitaryPriceVAT = Number(unitaryPriceNoVAT*VAT/1000)
 
 		var unitaryPriceNoVATplusVAT = Number(unitaryPriceNoVAT+unitaryPriceVAT)
 

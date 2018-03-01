@@ -6,7 +6,7 @@ export default class ProfilePicture extends React.Component{
 
 		{/* IMPORT PROPS */}
 
-		var profilePicture = this.props.product.pics.profile
+		var profilePicture = this.props.product.profilePic
 
 		return(
 

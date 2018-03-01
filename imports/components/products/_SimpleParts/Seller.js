@@ -6,8 +6,8 @@ export default class Seller extends React.Component{
 
 		{/* IMPORT PROPS */}
 
-		var sellerName = this.props.product.seller.entity.name
-		var sellerCountry = this.props.product.seller.entity.country
+		var sellerName = this.props.product.seller
+		var sellerCountry = this.props.product.sellerAddress
 
 		return(
 

@@ -1,5 +1,7 @@
 import React from "react"
 
+import { Products } from "../../collections/Products.js"
+
 export default class AdminSideAddProduct extends React.Component{
 
 	constructor(){
@@ -11,16 +13,43 @@ export default class AdminSideAddProduct extends React.Component{
 		this.validateEditDb=this.validateEditDb.bind(this)
 
 		this.state={ 	newProduct:{
+
 							available: "",
 							productName: "",
-							location: {entity: {name: "Location SRL", type: "Legal Entity", country:"Italy"}, legalAddress: {number:"34", street:"Arsskksksl", city:"Bagigi salala", zip:"23334", country:"Italy"}},
-							pics: {profile: "", cover: ""},
-							price: {noVAT: "", VAT: 22, currency: {name:"euro", code:"EUR", symbol:"€"}},
-							quantity: {pieces: 1, quantityPerPiece: ""},
-							uom: {quantity: {system: "metric system", unit:"gr"}, unitaryPrice: {system: "metric system", unit:"kg"}},
-							manufacturer: {entity: {name: "Manuf SRL", type: "Legal Entity", country:"Italy"}, legalAddress: {number:"34", street:"Arucul", city:"Bagigi", zip:"23334", country:"Italy"}},
-							seller: {entity: {name: "Seller SRL", type: "Legal Entity", country:"Italy"}, legalAddress: {number:"34", street:"Arsskksksl", city:"Bagigi salala", zip:"23334", country:"Italy"}},
+
+							priceNoVAT:"",
+							VAT: 22,
+							currency: "€",
+							currency_id: {"$id":"111", "$ref":"currencies"},
+
+							pieces: 1,
+
+							quantityPerPiece: "",
+							quantityPerPieceUoM: {UoM: "gr", scale: 0.001},
+							quantityPerPieceUoM_id:{"$id":"111", "$ref":"unitsOfMeasurement"},
+
+							unitaryPriceUoM: {UoM: "kg", scale: 1},
+							unitaryPriceUoM_id: {"$id":"222", "$ref":"unitsOfMeasurement"},
+
+							manufacturer: "Azienda Agricola lo Scroto SRL",
+							manufacturer_id: {"$id":"333", "$ref":"entities"},
+							manufacturerAddress:"Italy",
+							manufacturerAddress_id: {"$id":"222", "$ref":"addresses"},
+
+							pickUpEntity: "Cristzzo SRL",
+							pickUpEntity_id: {"$id":"111", "$ref":"entities"},
+							pickUpAddress: "Milan, Italy",
+							pickUpAddress_id: {"$id":"222", "$ref":"addresses"},
+
+							seller:"Agrigesù SRL",
+							seller_id: {"$id":"222", "$ref":"entities"},
+							sellerAddress:"Milan, Italy",
+							sellerAddress_id: {"$id":"222", "$ref":"addresses"},
+
 							tags:[],
+
+							profilePic: "https://media.eataly.net/media/catalog/product/cache/7/image/433x/9df78eab33525d08d6e5fb8d27136e95/I/l/Il-Mercante-di-Spezie-Sale-Trapani-Secchiello-1Kg-49048.jpg", 
+							coverPic:"",
 						 	},
 						
 							productName:"",
@@ -30,9 +59,13 @@ export default class AdminSideAddProduct extends React.Component{
 							tags:"",
 							profilePic:"",
 							coverPic:"",
-						
+
+							form: "CREATE NEW COMPANY",
+
+							editedProduct: [],
 		}
 	}
+
 
 	validateEditDb(){
 
@@ -58,12 +91,12 @@ export default class AdminSideAddProduct extends React.Component{
 	{/* PREPARE NEW PRODUCT */}
 
 		newProduct.productName = productName
-		newProduct.price.noVAT = noVAT
-		newProduct.quantity.quantityPerPiece = quantityPerPiece
+		newProduct.pricenoVAT = noVAT
+		newProduct.quantityPerPiece = quantityPerPiece
 		newProduct.available = available
 		newProduct.tags = tags
-		newProduct.pics.profile = profilePic
-		newProduct.pics.cover = coverPic
+		newProduct.profilePic = profilePic
+		newProduct.coverPic = coverPic
 
 	{/* SEND TO DB */}
 

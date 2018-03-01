@@ -1,6 +1,15 @@
 import React from "react"
 
+import { Products } from "../../../collections/Products.js"
+
 export default class AdminAvailability extends React.Component{
+
+	removeProduct(){
+		
+		var productId = this.props.product._id
+		
+		Meteor.call("removeProduct", productId)
+	}
 
 	render(){
 
@@ -12,7 +21,7 @@ export default class AdminAvailability extends React.Component{
 
 				<div className="favourites-and-cart-container">
 
-				<center className="line-height">
+				<center onClick={this.removeProduct.bind(this)} className="line-height">
 					<div className="far fa-trash-alt icons"></div>
 				</center>
 

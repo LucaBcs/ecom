@@ -6,8 +6,10 @@ export default class Tags extends React.Component{
 
 		{/* IMPORT PROPS */}
 
-		var tags = this.props.product.tags
-
+		var tags = this.props.product.tags.map((item, index)=>{
+			return 	<p key={index}>{item.key}:{item.value}</p>
+		})
+		
 		return(
 
 			<div className="standarCenterRow-container">

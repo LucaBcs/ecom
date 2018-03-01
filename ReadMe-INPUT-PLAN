@@ -64,3 +64,17 @@ manufacturer: {entity: {name: "Manufacturer 1 SRL", type: "Legal Entity", countr
 seller: harcoded 2
 ------------------------------------------------
 seller: {entity: {name: "Seller SRL", type: "Legal Entity", country:"Italy"}, legalAddress: {number:"34", street:"Arsskksksl", city:"Bagigi salala", zip:"23334", country:"Italy"}},
+
+
+newProduct:{
+							available: "",
+							productName: "",
+							pickUpLocations: [{companyId: "company1", addressId: "address2"}],
+							pics: {profile: "", cover: ""},
+							price: {noVAT: "", VAT: 22, currencyId:"EUR"},
+							quantity: {pieces: 1, quantityPerPiece: ""},
+							uom: {quantity: {system: "metric system", unit:"gr"}, unitaryPrice: {system: "metric system", unit:"kg"}},
+							manufacturerId:"company3",
+							sellerId:"company2",
+							tags:[],
+						 	},

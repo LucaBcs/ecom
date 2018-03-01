@@ -6,10 +6,10 @@ render(){
 
 		{/* IMPORT PROPS */}
 
-		var pieces = this.props.product.quantity.pieces
-		var quantityPerPiece = this.props.product.quantity.quantityPerPiece
-		var currency = this.props.product.price.currency.symbol
-		var quantityUoM = this.props.product.uom.quantity.unit
+		var pieces = this.props.product.pieces
+		var quantityPerPiece = this.props.product.quantityPerPiece
+		var currency = this.props.product.currency
+		var quantityUoM = this.props.product.quantityPerPieceUoM.UoM
 
 		return(
 

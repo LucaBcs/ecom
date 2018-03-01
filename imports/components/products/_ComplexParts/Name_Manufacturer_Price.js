@@ -7,12 +7,12 @@ export default class Name_Manufacturer_Price extends React.Component{
 		{/* IMPORT PROPS */}
 
 		var productName = this.props.product.productName
-		var manufacturerName = this.props.product.manufacturer.entity.name
-		var manufacturerCountry = this.props.product.manufacturer.entity.country
-		var currency = this.props.product.price.currency.symbol
+		var manufacturerName = this.props.product.manufacturer
+		var manufacturerCountry = this.props.product.manufacturerAddress
+		var currency = this.props.product.currency
 
-		var priceNoVAT = Number(this.props.product.price.priceNoVAT)
-		var productVAT = Number(this.props.product.price.productVAT)
+		var priceNoVAT = Number(this.props.product.priceNoVAT)
+		var productVAT = Number(this.props.product.VAT)
 
 		{/* EDITING AND CALCULATIONS */}
 
@@ -23,7 +23,7 @@ export default class Name_Manufacturer_Price extends React.Component{
 		var priceNoVATplusVAT = Number(priceNoVAT+priceVAT)
 
 		var displayPriceNoVATplusVAT = Number(priceNoVATplusVAT).toFixed(2).split(".")
-		var displayPriceNoVAT = Number(priceNoVAT).toFixed(2).split(".").join(",")
+		var displayPriceNoVAT = Number(priceNoVAT).toFixed(2).split(".")
 
 		return(
 
@@ -36,13 +36,29 @@ export default class Name_Manufacturer_Price extends React.Component{
 					<div className="vertical-space"></div>
 				</div>
 
-				<div className="two-line-text-right"> 
+<div className="big-price-containter">
+	<div className="big-price-wrap">
+		<div className="big-price-left">{displayPriceNoVATplusVAT[0]}</div>
+		<div className="big-price-right">,{displayPriceNoVATplusVAT[1]}&nbsp;{currency}</div>
+	</div>
+
+	<div className="big-price-vat-wrap">
+	<div className="big-price-vat-left">{displayPriceNoVAT[0]}</div>
+	<div className="big-price-vat-right">,{displayPriceNoVAT[1]}&nbsp;{currency}+VAT</div>
+	</div>
+
+</div>
+
+
+				{/*
+				<div className="big-price-containter"> 
 					<p className="float-right bigPriceDecimals">{currency}</p> 
 					<p className="float-right bigPriceDecimals">,{displayPriceNoVATplusVAT[1]}</p>
 			        <p className="float-right bigPrice">{displayPriceNoVATplusVAT[0]}</p> 
 				    <p className="float-right priceNoVAT">{currency}+VAT &nbsp;</p> 
 				    <p className="float-right priceNoVAT">{displayPriceNoVAT}</p> 
 			  	</div>	
+			  	*/}
 
 			</div>
 		)
